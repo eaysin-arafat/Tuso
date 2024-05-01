@@ -1,0 +1,31 @@
+/*
+ * Created by: Max
+ * Date created: 10.11.2023
+ * Modified by: Max
+ * Last modified: 03.12.2023
+ * Reviewed by:
+ * Date Reviewed:
+ */
+
+.jodit-status-bar__item.jodit-status-bar__item-right:last-child {
+  display: none;
+}
+.jodit-react-container {
+  margin-top: 5px;
+}
+
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_image.jodit-ui-group__image,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_table.jodit-ui-group__table,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_link.jodit-ui-group__link,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_brush.jodit-toolbar-button_with-trigger_true.jodit-ui-group__brush,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_fullsize.jodit-ui-group__fullsize,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_file.jodit-ui-group__file,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_video.jodit-ui-group__video,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_classSpan.jodit-toolbar-button_with-trigger_true.jodit-ui-group__classSpan,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_paste.jodit-toolbar-button_with-trigger_true.jodit-ui-group__paste,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_source.jodit-ui-group__source,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_print.jodit-ui-group__print,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_about.jodit-ui-group__about,
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_copy.jodit-ui-group__copy {
+  display: none;
+}

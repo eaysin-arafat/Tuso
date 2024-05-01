@@ -1,0 +1,240 @@
+/*
+ * Created by: Max
+ * Date created: 10.01.2024
+ * Modified by: Max
+ * Last modified: 05.02.2024
+ * Reviewed by:
+ * Date Reviewed:
+ */
+
+import { RootState } from "@/app/store";
+import PlusIcon from "@/assets/icons/PlusIcon";
+import CustomPagination from "@/components/core/custom-pagination/CustomPagination";
+import usePagination from "@/components/core/custom-pagination/usePagination";
+import TableSkeleton from "@/components/core/loader/TableSkeleton";
+import Table from "@/components/core/table/Table";
+import TableBody from "@/components/core/table/TableBody";
+import TableHeader from "@/components/core/table/TableHeader";
+import ErrorPage from "@/components/error-page/ErrorPage";
+import NotFound from "@/components/not-found/NotFound";
+import TableButton from "@/components/shared/table-button/TableButton";
+import { IncidentPriority } from "@/constants/api-interface";
+import { priorityModalTypes } from "@/constants/modal-types/modal-types";
+import {
+  useDeleteIncidentPriorityMutation,
+  useReadIncidentPrioritiesPageQuery,
+} from "@/features/incident-priority/incident-priority-api";
+import {
+  closeAddModal,
+  closeEditModal,
+  openAddModal,
+  openEditModal,
+} from "@/features/modal/modal-slice";
+import useDataHandling from "@/hooks/shared/useDataHandle";
+import useCreateSideEffects from "@/hooks/shared/useSideEffect";
+import useWindowWidth from "@/hooks/shared/useWindowWidth";
+import { swalWarning } from "@/utilities/swal-fire";
+import { BiEdit, BiTrash } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import CreatePriority from "../create/CreatePriority";
+import EditPriority from "../edit/EditPriority";
+
+const Priority = () => {
+  // get modal data form the redux store
+  const { addModal, editModal } = useSelector(
+    (state: RootState) => state.modal
+  );
+
+  // window width for responsive design
+  const w1380 = useWindowWidth(1380);
+
+  // action dispatcher
+  const dispatch = useDispatch();
+
+  // per page items count
+  const paginationDefaultShowValue = [10, 20, 30, 50];
+
+  // pagination hooks
+  const { setStart, start, setTake, take, activePage, setActivePage } =
+    usePagination({
+      paginationDefaultShowValue,
+    });
+
+  // read Priority query
+  const {
+    data: priorityData,
+    isError,
+    isLoading,
+    isSuccess,
+  } = useReadIncidentPrioritiesPageQuery({
+    start,
+    take,
+  });
+
+  // delete Priority mutation
+  const [
+    deleteIncidentPriority,
+    {
+      data: incidentPriorityDeleteRes,
+      status: deleteStatus,
+      isError: isDeleteError,
+      error: deleteError,
+      isSuccess: isDeleteSuccess,
+    },
+  ] = useDeleteIncidentPriorityMutation();
+
+  //  add priority handler
+  const handleAddPriority = () => {
+    dispatch(
+      openAddModal({
+        modalId: priorityModalTypes?.addPriority,
+        data: null,
+      })
+    );
+  };
+
+  //  edit priority handler
+  const handleEditPriority = (data: IncidentPriority) => {
+    dispatch(
+      openEditModal({
+        modalId: priorityModalTypes?.editPriority,
+        data: data,
+      })
+    );
+  };
+
+  // close modal handler
+  const closeModal = () => {
+    dispatch(closeAddModal());
+    dispatch(closeEditModal());
+  };
+
+  // delete priority handler
+  const deleteFunction = (id: number) => {
+    Swal.fire(swalWarning({})).then((result) => {
+      if (result.isConfirmed) {
+        deleteIncidentPriority(id);
+      }
+    });
+  };
+
+  // data handling
+  const { dataNotFound, isDataError, isDataLoading, isDataSuccess } =
+    useDataHandling({
+      isError,
+      isLoading,
+      isSuccess,
+      length: priorityData?.data?.data?.length,
+    });
+
+  // delete side effect
+  useCreateSideEffects({
+    error: deleteError,
+    isError: isDeleteError,
+    isSuccess: isDeleteSuccess,
+    message: "priority",
+    messageType: "delete",
+    response: incidentPriorityDeleteRes,
+    status: deleteStatus,
+  });
+
+  return (
+    <div className="">
+      <div className="flex justify-end mb-3">
+        {/* ADD BUTTON */}
+        <button onClick={handleAddPriority} className="main_btn">
+          <PlusIcon /> Add Priority
+        </button>
+      </div>
+      <div className="bg-whiteColor rounded-lg pb-4">
+        {/* LOADING SKELETON */}
+        {isDataLoading && <TableSkeleton />}
+
+        {/* ERROR */}
+        {isDataError && <ErrorPage />}
+
+        {/* NOT FOUND */}
+        {dataNotFound && <NotFound />}
+
+        {/* TABLE  */}
+        {isDataSuccess && (
+          <Table className="min-w-[550px]">
+            {/* TABLE HEADER */}
+            <TableHeader
+              data={[
+                {
+                  title: "Priority Name",
+                  w: "30%",
+                },
+                {
+                  title: "",
+                  w: w1380 ? "120px" : "140px",
+                },
+              ]}
+            />
+
+            {/* TABLE BODY */}
+            {priorityData?.data?.data?.map((priority, index) => (
+              <TableBody
+                key={index}
+                index={index}
+                length={priorityData?.data?.data?.length}
+                data={[
+                  {
+                    title: priority?.priority,
+                    w: "30%",
+                  },
+                  {
+                    title: (
+                      <div className="flex ">
+                        <TableButton
+                          className="border-r border-borderColor pe-3 me-3 "
+                          onClick={() => handleEditPriority(priority)}
+                          icon={<BiEdit className="text-violetColor" />}
+                          text="Edit"
+                        />
+                        <TableButton
+                          onClick={() => deleteFunction(priority?.oid)}
+                          icon={<BiTrash className="text-redColor" />}
+                          text="Delete"
+                        />
+                      </div>
+                    ),
+                    w: w1380 ? "120px" : "140px",
+                  },
+                ]}
+              />
+            ))}
+          </Table>
+        )}
+
+        {/* PAGINATION */}
+        <div className="flex justify-end mx-5">
+          <CustomPagination
+            take={take}
+            setTake={setTake}
+            start={start}
+            setStart={setStart}
+            totalItemsCount={priorityData?.data?.totalRows}
+            showInPage={paginationDefaultShowValue}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
+        </div>
+      </div>
+
+      {/* CREATE PRIORITY MODAL */}
+      {addModal?.modalId === priorityModalTypes?.addPriority && (
+        <CreatePriority toggler={closeModal} />
+      )}
+
+      {/* EDIT PRIORITY MODAL */}
+      {editModal?.modalId === priorityModalTypes?.editPriority && (
+        <EditPriority toggler={closeModal} />
+      )}
+    </div>
+  );
+};
+
+export default Priority;

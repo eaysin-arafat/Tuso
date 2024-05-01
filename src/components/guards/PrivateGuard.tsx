@@ -1,0 +1,19 @@
+/*
+ * Created by: Max
+ * Date created: 10.11.2023
+ * Modified by: Max
+ * Last modified: 03.12.2023
+ * Reviewed by:
+ * Date Reviewed:
+ */
+
+import useAuth from "@/hooks/auth/useAuth";
+import { Navigate, Outlet } from "react-router-dom";
+
+// private guard component
+const PrivateGuard = () => {
+  const isLoggedIn = useAuth();
+  return isLoggedIn ? <Outlet /> : <Navigate to="/" />;
+};
+
+export default PrivateGuard;

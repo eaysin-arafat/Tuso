@@ -1,0 +1,50 @@
+export interface CreateTicketType {
+  dateCreated: string;
+  createdBy: number;
+  dateModified: string;
+  modifiedBy: number;
+  isDeleted: boolean;
+  oid: number;
+  ticketTitle: string;
+  dateOfIncident: string;
+
+  description: string;
+  priorityId: number;
+  firstLevelCategoryId: number;
+  secondLevelCategoryId: number;
+  thirdLevelCategoryId: number;
+  teamId: number;
+  assignedTo: number;
+  callerName: string;
+  callerEmail: string;
+  callerCellphone: string;
+  callerJobTitle: string;
+
+  systemId: number;
+  dateReported: string;
+  resolvedRequest: boolean;
+  dateResolved: string;
+  isResolved: boolean;
+  isOpen: boolean;
+  facilityId: number;
+  reportedBy: number;
+  reassignedTo: number;
+  assignedToState: number;
+  reassignDate: string;
+  callerCountryCode: string;
+  isReassigned: boolean;
+  agentId: number;
+  agentDateModified: string;
+  supervisedId: number;
+  supervisedDateModified: string;
+  expertId: number;
+  expertDateModified: string;
+  adminId: number;
+  adminDateModified: string;
+  teamLeadId: number;
+  teamLeadDateModified: string;
+  closeUserAccountId: number;
+  dateClosed: string;
+  fundingAgencyList: number[];
+  implementingList: number[];
+}
