@@ -1,12 +1,12 @@
-# TUSO
+# Helpdesk
 
 ## Overview
 
-Tuso is a robust system issue tracking platform designed to streamline the process of reporting, managing, and resolving system issues efficiently. With Tuso, users can easily report system issues they encounter, while support staff can effectively track, prioritize, and resolve these issues in a timely manner. Tuso also includes Remote Desktop Protocol (RDP) feature, allowing support staff to establish live connections with users' systems to diagnose and resolve issues in real-time. The platform provides a user-friendly interface for both users and support staff, ensuring seamless communication and collaboration throughout the issue resolution process.
+Helpdesk is a robust system issue tracking platform designed to streamline the process of reporting, managing, and resolving system issues efficiently. With Helpdesk, users can easily report system issues they encounter, while support staff can effectively track, prioritize, and resolve these issues in a timely manner. Helpdesk also includes Remote Desktop Protocol (RDP) feature, allowing support staff to establish live connections with users' systems to diagnose and resolve issues in real-time. The platform provides a user-friendly interface for both users and support staff, ensuring seamless communication and collaboration throughout the issue resolution process.
 
 ## Features
 
-- **User Authentication:** Tuso features a secure user authentication system, allowing users to register, log in, and manage their accounts securely. This ensures that only authorized users can access the platform and report system issues.
+- **User Authentication:** Helpdesk features a secure user authentication system, allowing users to register, log in, and manage their accounts securely. This ensures that only authorized users can access the platform and report system issues.
 
 - **Intuitive Ticket Creation:** Users can create tickets to report system issues effortlessly. The ticket creation process is user-friendly, allowing users to provide detailed descriptions, screenshots, and other relevant information to help support staff understand and address the reported issues effectively.
 
@@ -14,9 +14,9 @@ Tuso is a robust system issue tracking platform designed to streamline the proce
 
 - **Streamlined Ticket Resolution:** Support staff can communicate with users, provide updates, and resolve reported issues directly within the platform. This streamlines the issue resolution process and ensures clear communication between users and support staff throughout the entire process.
 
-- **Real-time Notifications:** Tuso features a real-time notification system that notifies users and support staff of any updates or changes to their tickets. This helps users stay informed about the progress of their reported issues and enables support staff to respond promptly to new tickets and updates.
+- **Real-time Notifications:** Helpdesk features a real-time notification system that notifies users and support staff of any updates or changes to their tickets. This helps users stay informed about the progress of their reported issues and enables support staff to respond promptly to new tickets and updates.
 
-- **Remote Desktop Protocol (RDP):** Tuso includes an integrated Remote Desktop Protocol (RDP) feature, allowing support staff to establish live connections with users' systems. This enables support staff to diagnose and resolve issues more effectively by accessing users' systems in real-time, providing immediate assistance and troubleshooting.
+- **Remote Desktop Protocol (RDP):** Helpdesk includes an integrated Remote Desktop Protocol (RDP) feature, allowing support staff to establish live connections with users' systems. This enables support staff to diagnose and resolve issues more effectively by accessing users' systems in real-time, providing immediate assistance and troubleshooting.
 
 - **Administrative Features:** Admins have access to administrative features, allowing them to manage users, configure system settings, and monitor system performance. This ensures that the platform operates smoothly and efficiently.
 
@@ -53,8 +53,8 @@ npm install -g yarn
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/Excel-Technologies-Ltd/TUSO-Fontend.git
-cd TUSO-Fontend
+git clone https://github.com/Excel-Technologies-Ltd/Helpdesk-Fontend.git
+cd Helpdesk-Fontend
 ```
 
 2. **Switch to the appropriate branch**
@@ -78,7 +78,7 @@ touch .env
 5. **Add the following environment variables to the .env file:**
 
 ```bash
-VITE_API_URL=https://example.com/tuso-api
+VITE_API_URL=https://example.com/Helpdesk-api
 VITE_BASE_URL=https://example.com
 ```
 
@@ -104,8 +104,8 @@ http://localhost:5173
 
 ### Usages
 
-- **Logging in to TUSO:**
-  Users need to log in to the TUSO system using their credentials. Here's a basic example of logging in.
+- **Logging in to Helpdesk:**
+  Users need to log in to the Helpdesk system using their credentials. Here's a basic example of logging in.
   ![Login Page](https://github.com/dev-Anamul/excel-readme-image/blob/main/Screenshot%20from%202024-03-24%2015-21-10.png)
 
 - **Create Issue Ticket:**
@@ -124,7 +124,7 @@ http://localhost:5173
 
 <a name="about"></a>
 
-At Excel Technologies Limited, we are dedicated to revolutionizing healthcare through innovative technology solutions. Our team is comprised of passionate individuals with diverse backgrounds and expertise, working together to develop and maintain TUSO system designed to streamline healthcare data management and improve patient outcomes. We are committed to delivering high-quality, user-friendly solutions that meet the needs of healthcare providers, administrators, and patients. For more information about our company and services, please visit our website at [www.excelbd.com](https://www.excelbd.com).
+At Excel Technologies Limited, we are dedicated to revolutionizing healthcare through innovative technology solutions. Our team is comprised of passionate individuals with diverse backgrounds and expertise, working together to develop and maintain Helpdesk system designed to streamline healthcare data management and improve patient outcomes. We are committed to delivering high-quality, user-friendly solutions that meet the needs of healthcare providers, administrators, and patients. For more information about our company and services, please visit our website at [www.excelbd.com](https://www.excelbd.com).
 
 ### Team Composition
 
@@ -132,13 +132,13 @@ At Excel Technologies Limited, we are dedicated to revolutionizing healthcare th
 
 - **Development Team:** Our .NET Core backend API is crafted by a talented team of 8 Software Engineers led by an experienced Team Lead. They are committed to ensuring the robustness, scalability, and security of our system.
 
-- **Frontend Team:** The user interface of TUSO is developed using React by a team of 7 skilled Software Engineers, led by a proactive Team Lead. They focus on creating intuitive interfaces that enhance user experience and efficiency.
+- **Frontend Team:** The user interface of Helpdesk is developed using React by a team of 7 skilled Software Engineers, led by a proactive Team Lead. They focus on creating intuitive interfaces that enhance user experience and efficiency.
 
-- **UI/UX Team:** Our UI/UX Design Team is dedicated to creating visually appealing and user-friendly interfaces for TUSO. Their innovative designs are aimed at optimizing workflow and improving usability for healthcare professionals.
+- **UI/UX Team:** Our UI/UX Design Team is dedicated to creating visually appealing and user-friendly interfaces for Helpdesk. Their innovative designs are aimed at optimizing workflow and improving usability for healthcare professionals.
 
-- **Quality Assurance Team:** Ensuring the reliability and quality of TUSO is the responsibility of our SQA Team. Comprising Software Engineers with a keen eye for detail, they rigorously test every aspect of the software to guarantee optimal performance and compliance with industry standards.
+- **Quality Assurance Team:** Ensuring the reliability and quality of Helpdesk is the responsibility of our SQA Team. Comprising Software Engineers with a keen eye for detail, they rigorously test every aspect of the software to guarantee optimal performance and compliance with industry standards.
 
-- **Personal Touch:** Behind TUSO is a team of passionate individuals driven by a shared vision of leveraging technology to make a positive impact in the healthcare industry. Each team member, from developers to designers to QA analysts, brings unique perspectives and skills to the table, contributing to the success of our project.
+- **Personal Touch:** Behind Helpdesk is a team of passionate individuals driven by a shared vision of leveraging technology to make a positive impact in the healthcare industry. Each team member, from developers to designers to QA analysts, brings unique perspectives and skills to the table, contributing to the success of our project.
 
   As a cohesive unit, we collaborate closely, leveraging our collective expertise to overcome challenges and deliver a cutting-edge solution that empowers healthcare providers and improves patient care. With a commitment to excellence and a focus on innovation, we are proud to be at the forefront of healthcare technology, making a difference one line of code at a time.
 
@@ -146,10 +146,10 @@ At Excel Technologies Limited, we are dedicated to revolutionizing healthcare th
 
 <a name="privacy"></a>
 
-We safeguard personal data collected on TUSO, using it solely for healthcare services and system improvement. Information is shared with authorized personnel and third-party service providers only for system operation. We prioritize data security but cannot guarantee absolute protection. Policy updates will be posted on our website.
+We safeguard personal data collected on Helpdesk, using it solely for healthcare services and system improvement. Information is shared with authorized personnel and third-party service providers only for system operation. We prioritize data security but cannot guarantee absolute protection. Policy updates will be posted on our website.
 
 ### Terms of Use
 
 <a name="terms"></a>
 
-Accessing TUSO implies acceptance of our terms. Use the system lawfully and responsibly, safeguarding account credentials. Intellectual property rights belong to SmartCare Solutions. We are not liable for damages arising from system use. Changes to terms will be immediately effective upon posting.
+Accessing Helpdesk implies acceptance of our terms. Use the system lawfully and responsibly, safeguarding account credentials. Intellectual property rights belong to SmartCare Solutions. We are not liable for damages arising from system use. Changes to terms will be immediately effective upon posting.
