@@ -6,7 +6,7 @@ export const URLUserProfile = (): string => "/user-profile";
 export const URLUserSignIn = (): string => "/user-signin";
 
 // ticket routes
-export const URLTickets = (): string => "/tickets";
+export const URLTickets = () => "/tickets";
 export const URLFollowUp = (ticketId: string = ":ticketId"): string =>
   `/tickets/${ticketId}`;
 // export const URLFollowUpImage = (ticketId: string = ":ticketId"): string =>
