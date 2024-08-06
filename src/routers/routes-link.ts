@@ -3,7 +3,7 @@ export const URLDashboard = (): string => "/dashboard";
 export const URLUserList = (): string => "/user-list";
 export const URLUserProfile = (): string => "/user-profile";
 
-export const URLUserSignIn = (): string => "/user-signin";
+export const URLUserSignIn = () => "/user-signin";
 
 // ticket routes
 export const URLTickets = () => "/tickets";
